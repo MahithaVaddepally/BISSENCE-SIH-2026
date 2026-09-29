@@ -1,0 +1,7 @@
+[
+ {"name":"BIS Central Laboratory","city":"Sahibabad","state":"Uttar Pradesh","services":["Product testing","Materials","Electrical safety"],"recognition":"BIS laboratory (verify current scope)"},
+ {"name":"National Test House","city":"Ghaziabad","state":"Uttar Pradesh","services":["Mechanical testing","Pressure equipment","Materials"],"recognition":"Government testing laboratory"},
+ {"name":"Automotive Research Association of India","city":"Pune","state":"Maharashtra","services":["Automotive components","Protective equipment"],"recognition":"Testing facility (verify BIS recognition and scope)"},
+ {"name":"Central Power Research Institute","city":"Bengaluru","state":"Karnataka","services":["Electrical testing","Safety testing"],"recognition":"Testing facility (verify BIS recognition and scope)"},
+ {"name":"Electronics Regional Test Laboratory","city":"Kolkata","state":"West Bengal","services":["Product testing","Electrical safety"],"recognition":"Testing facility (verify BIS recognition and scope)"}
+]

@@ -1,0 +1,11 @@
+from pathlib import Path
+p=Path('frontend/src/App.tsx');s=p.read_text(encoding='utf-8')
+s=s.replace('Which standard applies to steel bottles?','What material should a stainless steel water bottle use?')
+s=s.replace('Which BIS standard applies to pressure cookers?','Which BIS standard applies to pressure cookers?')
+s=s.replace('<input placeholder="e.g. Electric rice cooker"/>','<input placeholder="e.g. Electric rice cooker" onChange={e=>setQuery(e.target.value)}/>')
+s=s.replace('{asked?<><div className="risk">','{asked&&answer.evidence.length?<><div className="risk">')
+s=s.replace('<span>Based on sample product data</span>','<span>{answer.evidence.length?"Matched BIS source data":"No source matched"}</span>')
+s=s.replace('<b>IS 302 (Part 1):2024</b><p>Safety of household and similar electrical appliances</p>','<b>{answer.standard}</b><p>{answer.category}</p>')
+s=s.replace('<div>Electrical safety</div><div>Thermal performance</div><div>Construction &amp; marking</div>','{answer.evidence.map(item=><div key={item.standard}>{item.clause}</div>)}')
+s=s.replace('SAMPLE DATASET · 30 RECORDS','BIS SOURCE DATA · 5 PRODUCTS').replace('USER DATASET · 3 CATEGORIES','BIS SOURCE DATA · 5 PRODUCTS').replace('Showing {searchStandards.length} of 30 sample standards','Showing {searchStandards.length} BIS source records')
+p.write_text(s,encoding='utf-8')

@@ -1,0 +1,13 @@
+from pathlib import Path
+p=Path('frontend/src/knowledge.ts');s=p.read_text(encoding='utf-8')
+s=s.replace("toyPdf: 'C:/Users/USER/OneDrive/Desktop/pressure cookers/toys/Product_Manual/PM-9873-Nov-2023.pdf',", "toyPdf: 'C:/Users/USER/OneDrive/Desktop/pressure cookers/toys/Product_Manual/PM-9873-Nov-2023.pdf',")
+s=s.replace("bisToyFaq: 'https://bis.gov.in/wp-content/uploads/2020/09/toys-faqs.pdf',", "bisToyFaq: 'https://www.bis.gov.in/wp-content/uploads/2023/11/PM-9873-Nov-2023.pdf',\n bisToyFAQ: 'https://bis.gov.in/wp-content/uploads/2020/09/toys-faqs.pdf',")
+s=s.replace("url:sources.bisToyFaq},{standard:'Toys QCO'", "url:sources.bisToyFAQ},{standard:'Toys QCO'")
+s=s.replace("if(/toy|toys|doll|rattle|puzzle|plaything/.test(q))", "if(/toy|toys|doll|rattle|puzzle|plaything|9873|15644/.test(q))")
+s=s.replace("if(/helmet|head.?gear|two.?wheeler|motorcycle rider/.test(q))", "if(/helmet|head.?gear|two.?wheeler|motorcycle rider|4151/.test(q))")
+s=s.replace("if(/pressure cooker|cooker|pressure cook/.test(q))", "if(/pressure cooker|cooker|pressure cook|2347/.test(q))")
+s=s.replace("if(/bottle|water container|drinking container|potable water/.test(q))", "if(/bottle|water container|drinking container|potable water|17803/.test(q))")
+s=s.replace("if(/steel|stainless|utensil|cookware|container/.test(q))", "if(/steel|stainless|utensil|cookware|container|14756/.test(q))")
+p.write_text(s,encoding='utf-8')
+p=Path('data/standards.json');s=p.read_text(encoding='utf-8').replace('https://bis.gov.in/wp-content/uploads/2020/09/toys-faqs.pdf","file":"C:/Users/USER/OneDrive/Desktop/pressure cookers/toys/Product_Manual/PM-9873-Nov-2023.pdf"','https://www.bis.gov.in/wp-content/uploads/2023/11/PM-9873-Nov-2023.pdf","file":"C:/Users/USER/OneDrive/Desktop/pressure cookers/toys/Product_Manual/PM-9873-Nov-2023.pdf"')
+p.write_text(s,encoding='utf-8')
